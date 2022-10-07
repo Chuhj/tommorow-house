@@ -167,6 +167,7 @@
         "severity": "warning"
       }
     ],
+    "string-quotes": "single",
     "time-min-milliseconds": [
       100,
       {
