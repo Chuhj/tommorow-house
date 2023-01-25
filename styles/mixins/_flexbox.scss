@@ -1,0 +1,30 @@
+$flex-map: (
+  center: center,
+  start: flex-start,
+  end: flex-end,
+  around: space-around,
+  between: space-between,
+);
+
+@function _get-flex-vlaue($key) {
+  @return map-get($map: $flex-map, $key: $key);
+}
+
+@mixin flexbox($jc, $ai) {
+  display: flex;
+  align-items: _get-flex-vlaue($ai);
+  justify-content: _get-flex-vlaue($jc);
+}
+
+@mixin inline-flexbox($jc, $ai) {
+  display: inline-flex;
+  align-items: _get-flex-vlaue($ai);
+  justify-content: _get-flex-vlaue($jc);
+}
+
+@mixin column-flexbox($jc, $ai) {
+  display: flex;
+  flex-direction: column;
+  align-items: _get-flex-vlaue($ai);
+  justify-content: _get-flex-vlaue($jc);
+}
